@@ -225,4 +225,30 @@ console.log(diamondStar(5));
 
 
 
-//
+//Pattern - 10: Half Diamond Star Pattern
+
+
+// *  
+// **
+// ***  
+// **
+// * 
+
+
+function halfDiamondStar(N){
+    pattern =""
+    for(i=1;i<=N;i++){
+        for(j=1;j<=i;j++){
+            pattern +="*"
+        }
+        pattern +="\n"
+    }
+    for(i=N-1;i>=1;i--){
+        for(j=1;j<=i;j++){
+        pattern +="*"
+        }
+     pattern+="\n"
+    }
+    return pattern
+}
+console.log(halfDiamondStar(5));
