@@ -252,3 +252,25 @@ function halfDiamondStar(N){
     return pattern
 }
 console.log(halfDiamondStar(5));
+
+
+//Pattern - 11: Binary Number Triangle Pattern
+
+// 1
+// 01
+// 101
+// 0101
+// 10101
+// 010101
+
+function binaryNumberTriangle(N){
+    pattern =""
+    for(i=0;i<N;i++){
+        for(j=0;j<=i;j++){
+            pattern += (j % 2 === i % 2) ? '1' : '0';
+        }
+        pattern +="\n"
+    }
+    return pattern
+}
+console.log(binaryNumberTriangle(6));
