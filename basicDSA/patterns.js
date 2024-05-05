@@ -274,3 +274,34 @@ function binaryNumberTriangle(N){
     return pattern
 }
 console.log(binaryNumberTriangle(6));
+
+
+//Pattern - 12: Number Crown Pattern
+
+// 1          1
+// 12        21
+// 12       321
+// 1234    4321
+// 12345  54321
+// 123456654321
+
+function numberCrownPatterns(N){
+    pattern +=""
+    for(i=1;i<=N;i++){
+
+        for(j=1;j<=i;j++){
+            pattern += j
+        }
+        for(j=0;j<2*(N-i);j++){
+            pattern +=" "
+        }
+        for(j=i;j>0;j--){
+            pattern += j
+        }
+        pattern +="\n"
+    }
+    return pattern
+}
+
+
+console.log(numberCrownPatterns(6));
