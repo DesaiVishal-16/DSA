@@ -329,8 +329,140 @@ function increaseNumberTriangle(N){
         row += num + " "
         num=num+1    
       }
-      pattern +=row.trim()+ '\n'
+      pattern +=row + '\n'
     }
     return pattern
 }
 console.log(increaseNumberTriangle(6));
+
+
+//Pattern-14: Increasing Letter Triangle Pattern
+
+
+// A
+// A B
+// A B C
+// A B C D
+// A B C D E
+// A B C D E F
+
+function increaseLetterTriangle(N){
+    pattern += ""
+
+    for(i=1;i<=N;i++){
+        let row= ""
+        for(j=1;j<=i;j++){
+            row += String.fromCharCode(64 + j)+ " "
+        }
+        pattern +=row + '\n'
+    } 
+    return pattern
+}
+console.log(increaseLetterTriangle(6));
+
+
+
+//Pattern-15: Reverse Letter Triangle Pattern
+
+
+// A B C D E F
+// A B C D E 
+// A B C D
+// A B C
+// A B
+// A
+
+function reverseLetterTriangle(N){
+    pattern += ""
+    for(i=N;i>=1;i--){
+        let row = ""
+        for(j=1;j<=i;j++){
+            row +=String.fromCharCode(64+j)+" "
+        }
+        pattern += row + '\n'
+    }
+    return pattern
+}
+console.log(reverseLetterTriangle(6));
+
+
+
+
+//Pattern - 16: Alpha-Ramp Pattern
+
+
+// A 
+// B B
+// C C C
+// D D D D
+// E E E E E
+// F F F F F F
+
+
+function alphaRamp(N){
+    pattern += ""
+    for(i=1;i<=N;i++){
+        let row = ""
+        for(j=1;j<=i;j++){
+            row += String.fromCharCode(64 + i) + " "
+        }
+        pattern += row + '\n'
+    }
+    return pattern
+}
+console.log(alphaRamp(6));
+
+
+//Pattern - 17: Alpha-Hill Pattern
+
+//         A     
+//        ABA    
+//       ABCBA   
+//      ABCDCBA  
+//     ABCDEDCBA 
+//    ABCDEFEDCBA
+
+
+function alphaHill(N){
+    pattern += ""
+    for(i=1;i<=N;i++){
+        let row = ""
+        for(j=N;j>i;j--){
+            row +=" "
+        }
+        for(j=1;j<=i;j++){
+         row += String.fromCharCode(64 + j)
+        }
+        for(j=i-1;j>=1;j--){
+            row += String.fromCharCode(64 + j)
+        }
+        pattern += row + '\n'
+    }
+    return pattern
+}
+
+console.log(alphaHill(6));
+
+
+
+//Pattern-18: Alpha-Triangle Pattern
+
+// F
+// E F
+// D E F
+// C D E F
+// B C D E F
+// A B C D E F
+
+function alphaTriangle(N){
+    pattern +=""
+    for(i=1;i<=N;i++){
+        let row = ""
+        for(j=N;j>N-i;j--){
+         row += String.fromCharCode(64+j)+ " "
+        }
+        pattern += row + '\n'
+    }
+    return pattern
+}
+console.log(alphaTriangle(6));
