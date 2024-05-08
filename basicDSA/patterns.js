@@ -466,3 +466,177 @@ function alphaTriangle(N){
     return pattern
 }
 console.log(alphaTriangle(6));
+
+
+//Pattern-19: Symmetric-Void Pattern
+
+// ************
+// *****  *****
+// ****    ****
+// ***      ***
+// **        **
+// *          *
+// *          *
+// **        **
+// ***      ***
+// ****    ****
+// *****  *****
+// ************
+
+
+function symmetricVoid(N){
+
+    pattern += ""
+
+  for(i = 0;i < N;i++){
+    let row = ""
+
+    for(j = N;j > i;j--){
+        row += "*"
+    }
+   for(k = 0;k <2 *i;k++){
+        row += " "
+   }
+    for(j = N; j > i;j--){
+        row += "*"
+      }   
+    pattern +=row + '\n'
+  }
+
+  for(i = 1;i <= N;i++){
+        let row = ""
+        
+    for(j = 1;j <= i;j++){
+        row += "*"
+    }
+    for(k = 0;k < 2*(N-i);k++){
+        row += " "
+    }
+    for(j = 1;j <= i;j++){
+        row += "*"
+    }
+    pattern +=row + '\n'
+  }
+  return pattern
+}
+
+console.log(symmetricVoid(6));
+
+
+//Pattern - 20: Symmetric-Butterfly Pattern
+
+// *          *
+// **        **
+// ***      ***
+// ****    ****
+// *****  *****
+// ************
+// *****  *****
+// ****    ****
+// ***      ***
+// **        **
+// *          *
+
+function symmetricButterfly(N){
+   pattern += ""
+
+   for(i = 1;i <= N;i++){
+     let row = ""
+     for(j = 1;j <= i;j++){
+       row += "*"
+     }
+     for(k = 1;k <= 2*(N-i);k++){
+        row += " "
+      }
+      for(j = 1;j <= i;j++){
+        row += "*"
+      }
+     pattern += row + '\n'
+   }
+
+   for(i = 0;i <= N;i++){
+    let row =""
+    for(j = N;j > i;j--){
+      row += "*" 
+    }
+    for(k = 0;k < 2*i;k++){
+       row +=" "
+     }
+     for(j = N;j > i;j--){
+       row += "*"
+     }
+    pattern += row + '\n'
+  }
+   return pattern
+}
+console.log(symmetricButterfly(6));
+
+
+//Pattern - 21: Hollow Rectangle Pattern
+
+// ******
+// *    *
+// *    *
+// *    *
+// *    *
+// ******
+
+function hollowRectangle(N){
+    pattern += ""
+
+    for(i = 0;i < N;i++){
+        let row =""
+    
+        for(j = 0;j < N;j++){
+
+            if(i==0 || j==0 || i==N-1 || j==N-1){
+                row += "*"
+            }
+            else{
+                row += " "
+            }
+        }
+        pattern += row + '\n'
+    }
+    return pattern
+}
+console.log(hollowRectangle(6));
+
+
+
+//Pattern - 22: The Number Pattern
+
+
+
+// 6 6 6 6 6 6 6 6 6 6 6 
+// 6 5 5 5 5 5 5 5 5 5 6 
+// 6 5 4 4 4 4 4 4 4 5 6 
+// 6 5 4 3 3 3 3 3 4 5 6 
+// 6 5 4 3 2 2 2 3 4 5 6 
+// 6 5 4 3 2 1 2 3 4 5 6 
+// 6 5 4 3 2 2 2 3 4 5 6 
+// 6 5 4 3 3 3 3 3 4 5 6 
+// 6 5 4 4 4 4 4 4 4 5 6 
+// 6 5 5 5 5 5 5 5 5 5 6 
+// 6 6 6 6 6 6 6 6 6 6 6
+
+function numberPattern(N){
+    pattern += ""
+    for(i = 0;i < 2*N-1;i++){
+       let row = ""
+       for(j = 0;j < 2*N-1;j++){
+
+        let top = i
+        let bottom = j
+        let left = (2*N-2)-j
+        let right = (2*N-2)-i
+
+        let minDistance = Math.min(top,bottom,left,right);
+        let num = N - minDistance
+        row += num + " "
+       }
+       pattern += row + '\n'
+    }
+    return pattern
+}
+console.log(numberPattern(6));
