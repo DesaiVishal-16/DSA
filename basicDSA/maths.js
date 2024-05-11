@@ -56,3 +56,59 @@ rl.question("Enter a number: ",(number)=>{
        console.log(reverseDigits(number));
        rl.close()
 })
+
+
+
+// 3. Check if a number is Palindrome or Not
+
+// Input:N = 4554
+// Output:Palindrome Number
+
+//Explanation: The reverse of 4554 is 4554 and therefore it is palindrome number
+
+// Input:N = 7789
+// Output: Not Palindrome
+
+
+function checkPalindrome(N){
+     let num = N
+     let reversed = 0
+    while(N > 0){
+       let rem = N % 10
+       reversed = (reversed * 10) + rem
+       N =  Math.floor(N / 10)
+    }
+    if(num===reversed){
+        return "Palindrome Number"
+    }else{
+        return "Not Palindrome Number"
+    }   
+}
+console.log(checkPalindrome(4554));
+
+
+
+// 4. Check if a number is Armstrong Number or not
+
+//Problem Statement: Given an integer N, return true it is an Armstrong number otherwise return false.
+
+//An Amrstrong number is a number that is equal to the sum of its own digits each raised to the power of the number of digits.
+
+
+// Input:N = 153
+// Output:True
+// Explanation: 13+53+33 = 1 + 125 + 27 = 153
+
+function armstrongNum(N){
+    let num = N
+    let sum = 0 
+
+    while(N > 0){
+      let rem = N % 10
+      let pow = rem*rem*rem
+      sum += pow
+      N = Math.floor(N/10)
+     }
+      return sum===num
+}
+console.log(armstrongNum(153));
