@@ -118,3 +118,67 @@ function findFactorial2(N){
 console.log("Factorial of a Number in Recursive m2 :");
 console.log(findFactorial2(5))
 
+
+
+//Reverse a given Array
+
+
+// Problem Statement: You are given an array. The task is to reverse the array and print it. 
+
+// Input: N = 5, arr[] = {5,4,3,2,1}
+// Output: {1,2,3,4,5}
+// Explanation: Since the order of elements gets reversed the first element will occupy the fifth position, 
+// the second element occupies the fourth position and so on.
+
+
+function reverseArray(arr, start = 0, end = arr.length - 1) {
+
+  if (start >= end) return arr;
+    [arr[start], arr[end]] = [arr[end], arr[start]]; 
+    return reverseArray(arr, start + 1, end - 1); 
+
+}
+console.log('Reverse a given Array:');
+console.log(reverseArray([5,4,3,2,1]));
+
+
+//Check if the given String is Palindrome or not
+
+// Problem Statement: "Given a string, check if the string is palindrome or not."  A string is said to be palindrome if the reverse of the string is the same as the string.
+
+// Input: Str =  “ABCDCBA”
+// Output: Palindrome
+// Explanation: String when reversed is the same as string.
+
+function checkPalindrome(s, start = 0, end = s.length - 1){
+   s = s.toLowerCase()
+
+      if(start >= end) return "is a Palindrome"
+
+      if(s[start] !== s[end]) return "is not a Palindrome"
+
+      return checkPalindrome(s,start+1,end-1) 
+      
+   
+}
+console.log("Palindrome or not");
+console.log("ABCDCBA",checkPalindrome("ABCDCBA"));
+console.log("tit for tit",checkPalindrome("tit for tit"));
+
+
+
+// Print Fibonacci Series up to Nth term
+
+// Problem Statement: Given an integer N. Print the Fibonacci series up to the Nth term.
+
+// Example 1:
+// Input: N = 5
+// Output: 5
+// Explanation: 0 1 1 2 3 5 is the fibonacci series up to 5th term.(0 based indexing)
+
+function fibonacciSeries(n){
+   if(n<=1) return n
+   return fibonacciSeries(n-1) + fibonacciSeries(n-2)
+}
+console.log("Print Fibonacci Series up to Nth term");
+console.log(fibonacciSeries(5));
