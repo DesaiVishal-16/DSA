@@ -1,4 +1,4 @@
-// Selection Sort Algorithm
+// Selection Sort Algorithm => Select minimum and Swap it
 
 // Problem Statement: Given an array of N integers, write a program to implement the Selection sorting algorithm.
 
@@ -14,7 +14,7 @@ function selectionSort(arr,N){
      let min ;
      for(let i = 0; i < N-1; i++){
          min = i
-       for(let j = i + 1; j <= N; j++){
+       for(let j = i + 1; j < N; j++){       
          if(arr[j] < arr[min]){
          min = j
          }
@@ -26,3 +26,5 @@ function selectionSort(arr,N){
       console.log(arr.join(','));
 }
 selectionSort([13,46,24,52,20,9],6)
+
+// Time Complexity => O(n^2)
