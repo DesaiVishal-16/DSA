@@ -31,5 +31,5 @@ let arr = [1, 2, 4, 7, 7, 5];
 const secondSmallest = secondSmallestEl(arr);
 console.log(secondSmallest);
 
-//tc => o(n)
-//sc => o(1)
+//Tc => o(n)
+//Sc => o(1)
