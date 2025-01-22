@@ -26,5 +26,5 @@ let arr = [2, 5, 1, 3, 0];
 const largestEL = largestElement(arr);
 console.log("Largest Element in an Array is", largestEL);
 
-//TC : O(N)
-//SC : 0(1)
+//Time Complexity : O(N)
+//Space Complexity : O(1)

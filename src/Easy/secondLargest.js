@@ -31,5 +31,5 @@ let arr = [1, 2, 4, 7, 7, 5];
 const secondLargest = secondLargestEl(arr);
 console.log(secondLargest);
 
-//tc => o(n)
-//sc => o(1)
+//Time Complexity => O(N)
+//Space Complexity => O(1)

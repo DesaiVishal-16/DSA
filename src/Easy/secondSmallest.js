@@ -31,5 +31,5 @@ let arr = [1, 2, 4, 7, 7, 5];
 const secondSmallest = secondSmallestEl(arr);
 console.log(secondSmallest);
 
-//Tc => o(n)
-//Sc => o(1)
+//Time Complexity => O(N)
+//Space Complexity => O(1)
