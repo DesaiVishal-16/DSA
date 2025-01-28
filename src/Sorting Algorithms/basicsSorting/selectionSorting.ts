@@ -19,13 +19,13 @@ function selectionSort({arr,N}:Props){
    for(let i = 0; i < N - 1 ; i++){
       minIdx = i;
       for(let j = i + 1; j < N; j++ ){
-         if(arr[j] < arr[minIdx]){
+         if(arr[j] < arr[minIdx]){   
             minIdx = j 
          }
-         let temp = arr[minIdx]
-         arr[minIdx] = arr[i]
-         arr[i] = temp
-      }
+      } 
+       let temp = arr[minIdx]
+       arr[minIdx] = arr[i]
+       arr[i] = temp
    } 
    console.log("Sorted array is :", arr) 
 }
