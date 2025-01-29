@@ -19,20 +19,21 @@ interface MergeSortProps {
   arr: number[];
   low: number;
   high: number;
-}
+}; 
 
 function merge({ arr, low, mid, high }: MergeProps): void {
+   
   const temp:number[] = [];
-  let left = low;
-  let right = mid + 1;
+  let left = low;           
+  let right = mid + 1;  
 
-     while(left <= right && right <= high){
+     while(left <= mid && right <= high) {
          if(arr[left] <= arr[right]){
-             temp.push(arr[left])
-             left++;
+            temp.push(arr[left])
+            left++;
          }else{
-             temp.push(arr[right]);
-             right++;
+            temp.push(arr[right]);
+            right++;
          }
      }
      while(left <= mid){
@@ -44,9 +45,9 @@ function merge({ arr, low, mid, high }: MergeProps): void {
         right++;
      }
      for(let i = 0; i < temp.length; i++ ){
-           arr[low + i] = temp[i] 
+        arr[low + i] = temp[i] 
      }
-}
+};
  function mergeSort({arr,low,high}:MergeSortProps){
       if(low >= high) return; 
        
@@ -55,13 +56,10 @@ function merge({ arr, low, mid, high }: MergeProps): void {
        mergeSort({arr, low, high: mid})
        mergeSort({arr, low: mid + 1, high})
        merge({arr, low , mid ,high})
-
- }
+ };
 
 // Example usage
 const arr = [4, 2, 1, 6, 7];
-console.log("Before Sorting:");
-console.log(arr);
 
 mergeSort({ arr, low: 0, high: arr.length - 1 });
 
